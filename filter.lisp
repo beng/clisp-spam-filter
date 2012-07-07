@@ -10,12 +10,14 @@
 (defun classify (text)
   classification (score (extract-features text)))
 
+;;; Classifies the word
 (defun classification (score)
   (cond
     ((<= score *max-ham-score*) 'ham)
     ((>= score *min-spam-score*) 'spam)
     (t 'unsure)))
 
+;;; Keeps track of each word
 (defclass word-feature ()
   ((word
     :initarg :word
@@ -32,3 +34,7 @@
     :accessor ham-count
     :initform 0
     :documentation "number of hams we have seen this feature in.")))
+
+;;; Resets feature-database (global hash table)
+(defun clear-database ()
+  (setf *feature-database* (make-hash-table :test #'equal)))
