@@ -1,3 +1,3 @@
-bayesian spam filter written in common lisp
+for my very first project in common lisp, i am writing a bayesian spam filter.
 
-using a custom version of aquamacs found here http://newartisans.com/2007/10/get-lisp-running-on-os-x-easy-version/
+i am using a custom version of aquamacs found here http://newartisans.com/2007/10/get-lisp-running-on-os-x-easy-version/
