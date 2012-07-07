@@ -19,6 +19,7 @@
 
 ;;; Keeps track of each word
 (defclass word-feature ()
+  
   ((word
     :initarg :word
     :accessor word
@@ -38,3 +39,16 @@
 ;;; Resets feature-database (global hash table)
 (defun clear-database ()
   (setf *feature-database* (make-hash-table :test #'equal)))
+
+(defun intern-feature (word)
+  (or (gethash word *feature-database*)
+      (setf (gethash word *feature-database*)
+	    (make-instance 'word-feature :word word))))
+
+(defun extract-words (text)
+  (delete-duplicates
+   (cl-ppcre:all-matches-as-strings "[a-zA-Z]{3,}" text)
+   :test #'string=))
+
+(defun extract-features (text)
+  (mapcar #'intern-feature (extract-words text)))
