@@ -1,1 +1,3 @@
 bayesian spam filter written in common lisp
+
+using a custom version of aquamacs found here http://newartisans.com/2007/10/get-lisp-running-on-os-x-easy-version/
