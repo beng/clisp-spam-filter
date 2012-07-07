@@ -1,7 +1,11 @@
+;; import information from package.lisp
 (in-package :com.ham.spam)
 
+;; global variable definition
 (defparameter *max-ham-score* .4)
 (defparameter *min-spam-score* .6)
+(defvar *feature-database* (make-hash-table :test #'equal))
+
 
 (defun classify (text)
   classification (score (extract-features text)))
