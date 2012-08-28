@@ -1,3 +1,5 @@
 for my very first project in common lisp, i am writing a bayesian spam filter.
 
 i am using a custom version of aquamacs found here http://newartisans.com/2007/10/get-lisp-running-on-os-x-easy-version/
+ 
+i followed the tutorial in http://www.gigamonkeys.com/book/
